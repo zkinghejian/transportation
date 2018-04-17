@@ -137,12 +137,19 @@
       <version>0.9.5</version>
     </dependency>
 
-    <!--Mysql数据库驱动-->
+    <!--Mysql数据库驱动
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.37</version>
     </dependency>
+    -->
+    
+	<dependency>
+	    <groupId>com.oracle</groupId>
+	    <artifactId>ojdbc14</artifactId>
+	    <version>10.2.0.4.0</version>
+	</dependency>
       <dependency>
           <groupId>org.jetbrains</groupId>
           <artifactId>annotations-java5</artifactId>

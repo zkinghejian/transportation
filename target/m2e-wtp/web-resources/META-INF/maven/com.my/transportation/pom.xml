@@ -137,12 +137,19 @@
       <version>0.9.5</version>
     </dependency>
 
-    <!--Mysql数据库驱动-->
+    <!--Mysql数据库驱动
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.37</version>
     </dependency>
+    -->
+    
+	<dependency>
+	    <groupId>com.oracle</groupId>
+	    <artifactId>ojdbc14</artifactId>
+	    <version>10.2.0.4.0</version>
+	</dependency>
       <dependency>
           <groupId>org.jetbrains</groupId>
           <artifactId>annotations-java5</artifactId>
@@ -152,5 +159,20 @@
   </dependencies>
   <build>
     <finalName>transportation</finalName>
+    <!-- 配置源文件 -->
+    <resources>
+	    <resource>
+	        <directory>src/main/java</directory>
+	        <includes>
+	          <include>**/*.xml</include>
+	        </includes>
+	    </resource>
+	    <resource>
+	      	<directory>src/main/resources</directory>
+	      	<includes>
+	          <include>**/*.*</include>
+	        </includes>
+      </resource>
+    </resources>
   </build>
 </project>
