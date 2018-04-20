@@ -7,8 +7,9 @@
 		values (#{order_id},#{car_type},#{car_num},#{car_pro},#{order_time},#{phoneno})
 	</insert>
 
-    <select id="getOrdersByPhoneno" parameterType="string" resultType="User" >
-    	 
+    <select id="getOrdersByPhoneno" parameterType="string" resultType="Order" >
+    	 select order_id,car_type,car_num,car_pro,order_time from
+    	 trans_order where phoneno = #{value}
     </select>
     
     

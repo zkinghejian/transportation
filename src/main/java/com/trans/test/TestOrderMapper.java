@@ -4,6 +4,7 @@ package com.trans.test;
 import java.io.InputStream;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -38,7 +39,7 @@ public class TestOrderMapper {
 		order.setCar_num("湘A88888");
 		order.setCar_type("奥迪Q5");
 		order.setPhoneno("13188888888");
-		order.setCar_pro("发动机没电了");
+		order.setCar_pro("需要更换机油和洗澡");
 		Timestamp time = Timestamp.valueOf(new Date().toLocaleString());
 		System.out.println(time);
 		order.setOrder_time(time);
@@ -46,6 +47,15 @@ public class TestOrderMapper {
 		
 		System.out.println(i);
 		
+	}
+	
+	@Test
+	public void getOrdersByPhonenoTest() {
+		OrderMapper mapper = session.getMapper(OrderMapper.class);
+		List<Order> orders = mapper.getOrdersByPhoneno("13188888888");
+		for (Order order : orders) {
+			System.out.println(order);
+		}
 	}
 	
 	@After
