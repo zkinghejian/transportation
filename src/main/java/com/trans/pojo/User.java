@@ -18,6 +18,10 @@ public class User {
 		this.password = password;
 		this.usertype = usertype;
 	}
+	
+	public User(String phoneno, String username, String password) {
+		this(phoneno,username,password,0);
+	}
 
 	public String getPhoneno() {
 		return phoneno;
