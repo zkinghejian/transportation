@@ -15,6 +15,7 @@
         <!-- 别名方式2，自动扫描，将JAVA类的类名作为类的类别名 -->
         <package name="com.trans.pojo" />
     </typeAliases>
+    <!--  
     <environments default="test">
     	<environment id="test">
     	    <transactionManager type="JDBC"></transactionManager>
@@ -26,12 +27,13 @@
     		</dataSource>
     	</environment>
     </environments>
+    -->
     <!--<mappers>-->
         <!--由于使用了spring与mybati整合包进行，mapper扫描，这里不需要配置-->
-    <!--</mappers>-->
+    <!--</mappers>
     <mappers>
     	<package name="com.trans.mapper"/>
     </mappers>
-
+    -->
 
 </configuration>

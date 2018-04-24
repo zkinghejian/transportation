@@ -1,5 +1,7 @@
-com\trans\mapper\OrderMapper.class
+com\trans\service\impl\UserServiceImpl.class
 com\trans\action\UserAction.class
-com\trans\pojo\User.class
 com\trans\mapper\UserMapper.class
 com\trans\pojo\Order.class
+com\trans\service\UserService.class
+com\trans\mapper\OrderMapper.class
+com\trans\pojo\User.class

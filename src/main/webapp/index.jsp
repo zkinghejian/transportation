@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>越野汽修</title>
@@ -25,11 +27,11 @@
 <!--//end-animate-->
 </head>
 <body>
-	<!--header-->
+<!--header-->
 	<div class="header">
 		<div class="container">
 			<div class="header-info navbar-left wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
-				<p>服务 热线 : 000-1234-1234&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.html" style="color: gold;">会员</a></p>
+				<p>服务 热线 : 000-1234-1234&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.jsp" style="color: gold;">会员</a></p>
 			</div>				
 			<form class="navbar-form navbar-right wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 				<div class="form-group">

@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/spring/spring-dao.xml</config>
 		<config>src/main/resources/spring/springmvc.xml</config>
+		<config>src/main/resources/spring/spring-service.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

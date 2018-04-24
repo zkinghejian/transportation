@@ -24,10 +24,16 @@
 	<!-- mvc 注解映射器 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
+	<!--静态资源解析包括 ：js、css、img、..-->
+    <!--<mvc:resources mapping="/js/" location="/js/**"/>-->
+    <!--<mvc:resources mapping="/css/" location="/css/**"/>-->
+    <!--<mvc:resources mapping="/fonts/" location="/fonts/**"/>-->
+    <!--<mvc:resources mapping="/images/" location="/images/**"/> -->
+    <!--加载静态资源-->
+	
 	<!--加载静态资源-->
     <mvc:default-servlet-handler />
     
-  
     
     <!--全局错误信息处理器
     	只要实现HandlerExceptionResolver接口就是全局异常处理器
@@ -39,10 +45,11 @@
 	  		 需要配置解析jsp的视图解析器
 	    	jsp解析，默认使用jstl标签解析
 	    -->
+	<!--
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!--拼接视图地址的前缀和后缀-->
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
+        拼接视图地址的前缀和后缀
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".html" />
     </bean>
-
+    -->
 </beans>

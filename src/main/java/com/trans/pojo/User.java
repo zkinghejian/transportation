@@ -1,5 +1,9 @@
 package com.trans.pojo;
 
+import java.sql.Timestamp;
+
+import oracle.sql.TIMESTAMP;
+
 public class User {
 
 	private String phoneno;
@@ -7,9 +11,21 @@ public class User {
 	private String password;
 	private int usertype;
 	
+	private Timestamp lastLoginTime;
+	
 	public User() {
 		
 	}
+    
+	public User(String phoneno, String username, String password, int usertype, Timestamp lastLoginTime) {
+		super();
+		this.phoneno = phoneno;
+		this.username = username;
+		this.password = password;
+		this.usertype = usertype;
+		this.lastLoginTime = lastLoginTime;
+	}
+
 
 	public User(String phoneno, String username, String password, int usertype) {
 		super();
@@ -54,12 +70,23 @@ public class User {
 	public void setUsertype(int usertype) {
 		this.usertype = usertype;
 	}
+	
+	
+
+	public Timestamp getLastLoginTime() {
+		return lastLoginTime;
+	}
+
+	public void setLastLoginTime(Timestamp lastLoginTime) {
+		this.lastLoginTime = lastLoginTime;
+	}
 
 	@Override
 	public String toString() {
 		return "User [phoneno=" + phoneno + ", username=" + username + ", password=" + password + ", usertype="
-				+ usertype + "]";
+				+ usertype + ", lastLoginTime=" + lastLoginTime + "]";
 	}
+
 	
 	
 }

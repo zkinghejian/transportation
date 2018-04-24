@@ -3,14 +3,16 @@
 <mapper namespace="com.trans.mapper.UserMapper">
     <!-- 登录 -->
 	<select id="login" resultType="User" parameterType="map">
-		select phoneno,username,usertype from trans_user where phoneno=#{username} and password=#{password}
+		select phoneno,username,usertype,lastlogintime from trans_user where phoneno=#{username} and password=#{password}
 	</select>
 	<!-- 注册 -->
 	<insert id="register" parameterType="User" >
 		insert into trans_user(phoneno,username,password) values(#{phoneno},#{username},#{password})
 	</insert>
 	
-	
+	<update id="updateLoginTime" parameterType="string">
+		update trans_user set lastlogintime =sysdate where phoneno=#{phoneno}
+	</update>
 	
 	
 	
