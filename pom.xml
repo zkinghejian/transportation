@@ -8,10 +8,12 @@
   <name>transportation Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+  
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
 
@@ -174,5 +176,23 @@
 	        </includes>
       </resource>
     </resources>
+    
+    <plugins>
+    <!-- tomcat 插件配置 -->
+    	<plugin>
+    		<groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+            <configuration>
+            <!-- 固定写法  -->
+            <url>http://127.0.0.1:8080/manager/text</url>
+            <username>hello</username>
+            <password>admin</password>
+            <server>tomcat8</server>
+            <!-- 工程名 -->
+            <path>/transportation</path>
+            </configuration>
+    	</plugin>
+    </plugins>
   </build>
 </project>

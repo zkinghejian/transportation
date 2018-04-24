@@ -1,0 +1,5 @@
+com\trans\mapper\OrderMapper.class
+com\trans\action\UserAction.class
+com\trans\pojo\User.class
+com\trans\mapper\UserMapper.class
+com\trans\pojo\Order.class

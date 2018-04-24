@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "H:\eclipseCode\transportation\mybatis-3-mapper.dtd">
+<mapper namespace="com.trans.mapper.OrderMapper">
+
+	<insert id="addOrder" parameterType="Order" >
+		insert into trans_order(order_id,car_type,car_num,car_pro,order_time,phoneno)
+		values (#{order_id},#{car_type},#{car_num},#{car_pro},#{order_time},#{phoneno})
+	</insert>
+
+    <select id="getOrdersByPhoneno" parameterType="string" resultType="Order" >
+    	 select order_id,car_type,car_num,car_pro,order_time from
+    	 trans_order where phoneno = #{value}
+    </select>
+    
+    
+</mapper>
