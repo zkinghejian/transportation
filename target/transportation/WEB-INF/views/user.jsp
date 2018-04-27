@@ -1,44 +1,46 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>越野汽修</title>
     <link rel="shortcut icon" href="../ico/yueye.ico" type="image/x-icon" />
-   <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
+   <link rel="stylesheet" type="text/css" href="../back/css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../back/css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../back/css/grid.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../back/css/layout.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../back/css/nav.css" media="screen" />
     <!--[if IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" media="screen" /><![endif]-->
     <!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
     <!-- BEGIN: load jquery -->
-    <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jquery-ui/jquery.ui.core.min.js"></script>
-    <script src="js/jquery-ui/jquery.ui.widget.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.ui.accordion.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.effects.core.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.effects.slide.min.js" type="text/javascript"></script>
-    <script src="js/table/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../back/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../back/js/jquery-ui/jquery.ui.core.min.js"></script>
+    <script src="../back/js/jquery-ui/jquery.ui.widget.min.js" type="text/javascript"></script>
+    <script src="../back/js/jquery-ui/jquery.ui.accordion.min.js" type="text/javascript"></script>
+    <script src="../back/js/jquery-ui/jquery.effects.core.min.js" type="text/javascript"></script>
+    <script src="../back/js/jquery-ui/jquery.effects.slide.min.js" type="text/javascript"></script>
+    <script src="../back/js/table/jquery.dataTables.min.js" type="text/javascript"></script>
     <!-- END: load jquery -->
     <script type="text/javascript" src="js/table/table.js"></script>
     <!-- BEGIN: load jqplot -->
-    <link href="css/table/demo_page.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
+    <link href="../back/css/table/demo_page.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../back/css/jquery.jqplot.min.css" />
     <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="js/jqPlot/excanvas.min.js"></script><![endif]-->
-    <script language="javascript" type="text/javascript" src="js/jqPlot/jquery.jqplot.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.canvasTextRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.barRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.pieRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.highlighter.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqPlot/plugins/jqplot.pointLabels.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.donutRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jqPlot/plugins/jqplot.bubbleRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../back/js/jqPlot/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.canvasTextRenderer.min.js"></script>
+    <script type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.barRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.pieRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.highlighter.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.pointLabels.min.js"></script>
+    <script type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.donutRenderer.min.js"></script>
+    <script type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.bubbleRenderer.min.js"></script>
     <!-- END: load jqplot -->
-    <script type="text/javascript" src="js/table/table.js"></script>
-    <script src="js/setup.js" type="text/javascript"></script>
-    <script src="js/user.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../back/js/table/table.js"></script>
+    <script src="../back/js/setup.js" type="text/javascript"></script>
+    <script src="../back/js/user.js" type="text/javascript"></script>
   <script type="text/javascript">
 
         $(document).ready(function () {
@@ -48,11 +50,13 @@
 
 
         });
+    
+     
     </script>
 
 </head>
 <body>
-    <div class="container_12">
+	<div class="container_12">
         
         <div class="grid_12 header-repeat">
             <div id="branding">
@@ -64,17 +68,17 @@
                     </div>
                 <div class="floatright">
                     <div class="floatleft">
-                        <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
+                        <img src="../back/img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>你好 测试</li>
+                            <li>你好 ${user.username}</li>
                             <!--  
                             <li><a href="#">Config</a></li>
                             -->
-                            <li><a href="#">退出</a></li>
+                            <li><a href="../user/logout">退出</a></li>
                         </ul>
                         <br />
-                        <span class="small grey">最后登录: 3 小时前</span>
+                        <span class="small grey">最后登录: ${user.lastLoginTime}</span>
                     </div>
                 </div>
                 <div class="clear">
@@ -122,7 +126,7 @@
                 <h2>亲爱的会员您好：</h2>
                 <div class="block">
                     <p class="start">
-                        <img src="img/vertical.jpg" alt="Ginger" class="right" />Lorem Ipsum is simply dummy
+                        <img src="../back/img/vertical.jpg" alt="Ginger" class="right" />Lorem Ipsum is simply dummy
                         text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                         standard dummy text ever since the 1500s, when an unknown printer took a galley
                         of type and scrambled it to make a type specimen book. It has survived not only
@@ -147,14 +151,14 @@
             <div class="box round">
                 <h2>预约申请</h2>
                 <div class="block ">
-                    <form action="#" method="post" enctype="application/x-www-form-urlencoded">
+                    <form id="yy" enctype="multipart/form-data" >
                     <table class="form">
                         <tr>
                             <td class="col1">
                                 <label>车型</label>
                             </td>
                             <td class="col2">
-                                <input type="text" id="grumble" name="car_type" />
+                                <input type="text" class="grumble" name="car_type" required="" />
                             </td>
                         </tr>
                         <tr>
@@ -170,7 +174,7 @@
                                 <label>车况问题</label>
                             </td>
                             <td>
-                                <textarea class="tinymce" name="car_pro" cols="70" rows="4"></textarea>
+                                <textarea id="pro" class="tinymce" name="car_pro" cols="70" rows="4" required=""></textarea>
                             </td>
                         </tr>
 
@@ -179,7 +183,7 @@
                                 <label>预约时间</label>
                             </td>
                             <td>
-                                <input type="datetime-local" name="order_time" />
+                                <input id="ti" type="datetime-local" name="order_time" required="" />
                             </td>
                         </tr>
                        
@@ -188,7 +192,7 @@
                                 <label>问题图片</label>
                             </td>
                             <td>
-                                <input class="btn btn-teal" type="file" />
+                                <input id="uploadfile" class="btn btn-teal" type="file" />
                             </td>
                         </tr>
                         <tr>
@@ -196,7 +200,7 @@
                                 <label></label>
                             </td>
                             <td>
-                                <input class="btn btn-teal"  type="submit" value="预      约" />
+                                <input onclick="yuyue();" class="btn btn-teal"  type="button" value="预      约"  />
                             </td>
                         </tr>
                     </table>

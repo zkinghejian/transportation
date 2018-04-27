@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>越野汽修</title>
@@ -19,17 +21,18 @@
 <!--animate-->
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/my.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
 </head>
 <body>
-	<!--header-->
+<!--header-->
 	<div class="header">
 		<div class="container">
 			<div class="header-info navbar-left wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
-				<p>服务 热线 : 000-1234-1234&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.html" style="color: gold;">会员</a></p>
+				<p>服务 热线 : 000-1234-1234&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.jsp" style="color: gold;">会员</a></p>
 			</div>				
 			<form class="navbar-form navbar-right wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 				<div class="form-group">
@@ -406,11 +409,11 @@
 		<div class="container">
 			<h3 class="title">联系我们</h3>	
 			<div class="col-md-7 contact-right wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">				
-				<form>
-					<input type="text" value="姓名" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '姓名';}" required="">
-					<input type="email" value="邮箱" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '邮箱';}" required="">
-					<input type="text" value="手机号" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '手机号';}" required="">
-					<textarea onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '车况问题...';}" required="">车况问题...</textarea>
+				<form id="indexinfo" onsubmit="return false;">
+					<input type="text" name="username" value="姓名" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '姓名';}" required="">
+					<input type="email" name="email" value="邮箱" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '邮箱';}" required="">
+					<input type="text" name ="phoneno" value="手机号" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '手机号';}" required="">
+					<textarea onFocus="this.value = '';"  onBlur="if (this.value == '') {this.value = '车况问题...';}" required="">车况问题...</textarea>
 					<input type="submit" value="提交" >
 				</form>
 			</div>

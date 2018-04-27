@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>会员</title>
@@ -14,13 +16,7 @@
 <link rel="shortcut icon" href="ico/yueye.ico" type="image/x-icon" />
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/my.js"></script>
-<script type="text/javascript">
-	function check(){
-		return false;
-	}
-</script>
 </head>
-
 <body>
 <h1>欢迎加入越野汽修</h1>
 <section>
@@ -46,10 +42,10 @@
 	</div>
     <div class="cbImage active signin agileits">
 		<h3>登 录</h3>
-		<form id="login" onsubmit="return check();">
+		<form action="user/login" method="post" id="login" onsubmit="return loginCheck();">
 			<input type="text" name="phoneno" class="number" placeholder="手机号" required="">
 			<input type="password" name="password" class="password" placeholder="密码" required="">
-			<input type="submit" class="done" value="登录">
+			<input  type="submit" class="done" value="登录">
 			<!--  
 			<ul class="bottom">
 				<li><a href="#" class="forgot">忘记密码?</a></li>
@@ -57,15 +53,20 @@
 			</ul>
 			-->
 		</form>
+			<ul class="bottom">
+				<li id="msg" style="color: red;">${msg }</li>
+			</ul>
 	</div>
     <div class="cbImage agileinfo">
 		<h3>注 册</h3>
-		<form action="#" method="post">
+		<span id="sp"></span>
+		<form action="user/register" method="post" onsubmit="return checkPassword();">
 			<input type="text" class="name" name="username" placeholder="用户名" required="">
-			<input type="password" class="password" name="password" placeholder="密码" required="">
-			<input type="password" class="password" name="confirmpassword" placeholder="确认密码" required="">
-			<input type="text" class="number" name="phoneno" placeholder="手机号" required="">
+			<input type="password" id="pas" class="password" name="password" placeholder="密码" required="" onfocus="emptySpan();">
+			<input type="password" id="cpas" class="password" name="confirmpassword" placeholder="确认密码" required="" onfocus="emptySpan();">
+			<input type="text" id="pho" class="number"  name="phoneno" placeholder="手机号" required="" onblur="checkPhoneno();" onfocus="emptySpan();" >
 			<input type="submit"  value="注册">
+			
 		</form>
 	</div>
     <div class="clear"></div>
