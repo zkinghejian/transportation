@@ -11,12 +11,12 @@
   
     <param-name>contextConfigLocation</param-name>
     
-    <param-value>classpath*:spring/spring-dao.xml</param-value>
-  	<!--  
-  	<param-value>classpath:spring/applicationContext-*.xml</param-value>
-  	-->
+    <param-value>classpath:spring/spring-*.xml</param-value>
   </context-param>
- 
+  <!-- ContextLoaderListener监听器的作用就是启动Web容器时，自动装配ApplicationContext的配置信息。 -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
   
   <!--springMVC前端控制器加载-->
   <servlet>
@@ -24,7 +24,7 @@
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
   	<init-param>
   		<param-name>contextConfigLocation</param-name>
-      	<param-value>classpath*:spring/springmvc.xml</param-value>
+      	<param-value>classpath:spring/springmvc.xml</param-value>
   	</init-param>
   </servlet>
   
@@ -48,7 +48,7 @@
   </filter-mapping>
   
   <welcome-file-list>
-  	<welcome-file>index.html</welcome-file>
+  	<welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
 </web-app>

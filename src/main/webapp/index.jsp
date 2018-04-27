@@ -21,6 +21,7 @@
 <!--animate-->
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/my.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
@@ -408,11 +409,11 @@
 		<div class="container">
 			<h3 class="title">联系我们</h3>	
 			<div class="col-md-7 contact-right wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">				
-				<form>
-					<input type="text" value="姓名" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '姓名';}" required="">
-					<input type="email" value="邮箱" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '邮箱';}" required="">
-					<input type="text" value="手机号" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '手机号';}" required="">
-					<textarea onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '车况问题...';}" required="">车况问题...</textarea>
+				<form id="indexinfo" onsubmit="return false;">
+					<input type="text" name="username" value="姓名" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '姓名';}" required="">
+					<input type="email" name="email" value="邮箱" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '邮箱';}" required="">
+					<input type="text" name ="phoneno" value="手机号" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '手机号';}" required="">
+					<textarea onFocus="this.value = '';"  onBlur="if (this.value == '') {this.value = '车况问题...';}" required="">车况问题...</textarea>
 					<input type="submit" value="提交" >
 				</form>
 			</div>

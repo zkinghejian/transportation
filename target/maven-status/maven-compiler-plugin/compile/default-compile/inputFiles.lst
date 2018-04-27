@@ -1,6 +1,7 @@
 H:\eclipseCode\transportation\src\main\java\com\trans\mapper\OrderMapper.java
 H:\eclipseCode\transportation\src\main\java\com\trans\pojo\User.java
 H:\eclipseCode\transportation\src\main\java\com\trans\mapper\UserMapper.java
+H:\eclipseCode\transportation\src\main\java\com\trans\pojo\IndexInfo.java
 H:\eclipseCode\transportation\src\main\java\com\trans\pojo\Order.java
 H:\eclipseCode\transportation\src\main\java\com\trans\service\impl\UserServiceImpl.java
 H:\eclipseCode\transportation\src\main\java\com\trans\service\UserService.java

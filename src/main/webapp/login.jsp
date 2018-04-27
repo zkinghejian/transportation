@@ -59,12 +59,14 @@
 	</div>
     <div class="cbImage agileinfo">
 		<h3>注 册</h3>
-		<form action="#" method="post">
+		<span id="sp"></span>
+		<form action="user/register" method="post" onsubmit="return checkPassword();">
 			<input type="text" class="name" name="username" placeholder="用户名" required="">
-			<input type="password" class="password" name="password" placeholder="密码" required="">
-			<input type="password" class="password" name="confirmpassword" placeholder="确认密码" required="">
-			<input type="text" class="number" name="phoneno" placeholder="手机号" required="">
+			<input type="password" id="pas" class="password" name="password" placeholder="密码" required="" onfocus="emptySpan();">
+			<input type="password" id="cpas" class="password" name="confirmpassword" placeholder="确认密码" required="" onfocus="emptySpan();">
+			<input type="text" id="pho" class="number"  name="phoneno" placeholder="手机号" required="" onblur="checkPhoneno();" onfocus="emptySpan();" >
 			<input type="submit"  value="注册">
+			
 		</form>
 	</div>
     <div class="clear"></div>

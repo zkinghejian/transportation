@@ -50,6 +50,8 @@
 
 
         });
+    
+     
     </script>
 
 </head>
@@ -149,14 +151,14 @@
             <div class="box round">
                 <h2>预约申请</h2>
                 <div class="block ">
-                    <form action="#" method="post" enctype="application/x-www-form-urlencoded">
+                    <form id="yy" enctype="multipart/form-data" >
                     <table class="form">
                         <tr>
                             <td class="col1">
                                 <label>车型</label>
                             </td>
                             <td class="col2">
-                                <input type="text" id="grumble" name="car_type" />
+                                <input type="text" class="grumble" name="car_type" required="" />
                             </td>
                         </tr>
                         <tr>
@@ -172,7 +174,7 @@
                                 <label>车况问题</label>
                             </td>
                             <td>
-                                <textarea class="tinymce" name="car_pro" cols="70" rows="4"></textarea>
+                                <textarea id="pro" class="tinymce" name="car_pro" cols="70" rows="4" required=""></textarea>
                             </td>
                         </tr>
 
@@ -181,7 +183,7 @@
                                 <label>预约时间</label>
                             </td>
                             <td>
-                                <input type="datetime-local" name="order_time" />
+                                <input id="ti" type="datetime-local" name="order_time" required="" />
                             </td>
                         </tr>
                        
@@ -190,7 +192,7 @@
                                 <label>问题图片</label>
                             </td>
                             <td>
-                                <input class="btn btn-teal" type="file" />
+                                <input id="uploadfile" class="btn btn-teal" type="file" />
                             </td>
                         </tr>
                         <tr>
@@ -198,7 +200,7 @@
                                 <label></label>
                             </td>
                             <td>
-                                <input class="btn btn-teal"  type="submit" value="预      约" />
+                                <input onclick="yuyue();" class="btn btn-teal"  type="button" value="预      约"  />
                             </td>
                         </tr>
                     </table>

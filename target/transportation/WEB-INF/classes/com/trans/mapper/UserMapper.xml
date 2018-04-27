@@ -3,15 +3,25 @@
 <mapper namespace="com.trans.mapper.UserMapper">
     <!-- 登录 -->
 	<select id="login" resultType="User" parameterType="map">
-		select phoneno,username,usertype from trans_user where phoneno=#{username} and password=#{password}
+		select phoneno,username,usertype,lastlogintime from trans_user where phoneno=#{username} and password=#{password}
 	</select>
 	<!-- 注册 -->
 	<insert id="register" parameterType="User" >
-		insert into trans_user(phoneno,username,password) values(#{phoneno},#{username},#{password})
+		insert into trans_user(phoneno,username,password,lastlogintime) values(#{phoneno},#{username},#{password},sysdate)
 	</insert>
 	
+	<update id="updateLoginTime" parameterType="string">
+		update trans_user set lastlogintime =sysdate where phoneno=#{phoneno}
+	</update>
 	
+	<insert id="indexInfo" parameterType="IndexInfo">
+		insert into indexinfo(username,email,phoneno,problem,infotime) values
+		(#{username},#{email},#{phoneno},#{problem},sysdate)
+	</insert>
 	
+	<select id="checkPhoneno" parameterType="string" resultType="int">
+		select count(*) from trans_user where phoneno=#{phoneno}
+	</select>
 	
 	
 </mapper>

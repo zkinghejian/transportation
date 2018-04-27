@@ -1,5 +1,7 @@
 package com.trans.action;
 
+import java.io.InputStream;
+import java.sql.Timestamp;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -7,10 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.trans.service.UserService;
 
@@ -34,6 +37,11 @@ public class UserAction{
 		return "";
 	}
 	
+	@RequestMapping(value= {"/register"})
+	public String register(String username,String password,String phoneno) {
+		int i = userService.register(username, password, phoneno);
+		return "redirect:../login.jsp";
+	}
 	
 	@RequestMapping(value= {"/login"})
 	public String login(String phoneno,String password,HttpSession session) {
@@ -53,9 +61,36 @@ public class UserAction{
 		}
 	}
 	
+	// 退出登录
 	@RequestMapping(value= {"/logout"})
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:../login.jsp";
+	}
+	
+	// 主页游客提价的信息
+	@RequestMapping(value = {"/indexInfo"})
+	@ResponseBody
+	public String indexInfo(String username,String email,String phoneno,String problem) {
+		String str = userService.indexInfo(username, email, phoneno, problem);
+		return str;
+	}
+	
+	// 主页游客提价的信息
+	@RequestMapping(value = {"/checkPhoneno"})
+	@ResponseBody
+	public String checkPhoneno(String phoneno) {
+		String str = userService.checkPhoneno(phoneno);
+		return str;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value= {"/yueyu"},method=RequestMethod.POST)
+	public String yueyu(@RequestParam MultipartFile[] uploadfile,String car_type, String car_num, String car_pro, String order_time ) {
+		System.out.println(order_time);
+		
+		String filename = uploadfile[0].getName();
+		System.out.println(filename);
+		return "ddd";
 	}
 }

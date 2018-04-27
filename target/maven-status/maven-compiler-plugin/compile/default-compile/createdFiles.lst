@@ -1,3 +1,4 @@
+com\trans\pojo\IndexInfo.class
 com\trans\service\impl\UserServiceImpl.class
 com\trans\action\UserAction.class
 com\trans\mapper\UserMapper.class
