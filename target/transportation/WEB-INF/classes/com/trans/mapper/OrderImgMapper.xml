@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trans.mapper.OrderImgMapper" >
+  <resultMap id="BaseResultMap" type="com.trans.pojo.OrderImg" >
+    <result column="IMG_URL" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="ORDER_ID" property="orderId" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insertImg" parameterType="com.trans.pojo.OrderImg" >
+    insert into TRANS_ORDER_IMG (IMG_URL, ORDER_ID)
+    values (#{imgUrl,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.trans.pojo.OrderImg" >
+    insert into TRANS_ORDER_IMG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="imgUrl != null" >
+        IMG_URL,
+      </if>
+      <if test="orderId != null" >
+        ORDER_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="imgUrl != null" >
+        #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

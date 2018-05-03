@@ -6,10 +6,6 @@
     MyBatis 主配置文件
 -->
 <configuration>
-
-
-    <properties resource="oracle.properties"></properties>
-
     <settings>
         <!-- 控制台打印sql语句 -->
     	<setting name="logImpl" value="STDOUT_LOGGING"/>
@@ -20,5 +16,11 @@
         <package name="com.trans.pojo" />
     </typeAliases>
     
-
+    <plugins>
+    	<plugin interceptor="com.trans.utils.page.PaginationInterceptor">
+    		<!-- 数据库类型 -->
+    		<property name="databaseType" value="oracle"/>
+    	</plugin>
+    </plugins>
+    
 </configuration>

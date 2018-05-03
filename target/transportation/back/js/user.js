@@ -9,11 +9,11 @@ function changeButton(id){
 // 预约申请
 function yuyue(){
 	var car_type = $("#yy :text[name=car_type]").val();
-	alert(car_type);
 
 	var car_num = $("#yy :text[name=car_num]").val();
 	var car_pro = $("#pro").val();
-	var order_time = $("#ti").val();
+	var order_time = $("#ti").val().replace('T',' ')+":00";
+	alert(order_time);
 	var uploadfile = $("#uploadfile").get(0).files[0];
 	var formdata = new FormData();
 	formdata.append("car_type",car_type);

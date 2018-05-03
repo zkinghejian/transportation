@@ -3,8 +3,16 @@
 <mapper namespace="com.trans.mapper.OrderMapper">
 
 	<insert id="addOrder" parameterType="Order" >
-		insert into trans_order(order_id,car_type,car_num,car_pro,order_time,phoneno)
-		values (#{order_id},#{car_type},#{car_num},#{car_pro},#{order_time},#{phoneno})
+		insert into trans_order (order_id,car_type,
+	      <if test="car_num != null" >
+	        car_num,
+	      </if>
+	    car_pro,order_time,phoneno) values 
+	    (#{order_id},#{car_type},
+	    <if test="car_num != null" >
+	        #{car_num},
+	    </if>
+	    #{car_pro},#{order_time},#{phoneno})
 	</insert>
 
     <select id="getOrdersByPhoneno" parameterType="string" resultType="Order" >
@@ -12,5 +20,8 @@
     	 trans_order where phoneno = #{value}
     </select>
     
+    <select id="pageTest" parameterType="page" resultType="Order">
+    	select * from trans_order
+    </select>
     
 </mapper>

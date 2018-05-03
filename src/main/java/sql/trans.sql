@@ -16,7 +16,7 @@ select * from trans_user;
 create table trans_order(
 order_id varchar2(40) primary key ,-- 预约编号
 car_type varchar2(50) not null, -- 车型
-car_num varchar2(30)  default '', -- 车牌
+car_num varchar2(30)  default ' ', -- 车牌
 car_pro varchar2(256) not null, -- 车况
 order_time timestamp not null,-- 预约时间
 order_status number(1) default 0, -- 状态  0 待处理  1 处理中  2  已处理 3 已取消

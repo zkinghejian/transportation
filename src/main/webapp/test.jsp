@@ -10,16 +10,13 @@
 	function test(){
 		var b = $("button").text();
 		alert(b);
-		var formdata = new FormData();
-		formdata.append("uploadfile","kjl");
+		var pageNo = 1;
+		var pagesize = 5;
+		var status = 1;
 		$.ajax({
-			url:"user/yueyu",
+			url:"order/yueyuPage",
 			type:"post",
-			data:formdata,
-			async: false,    
-	        cache: false,   
-	        contentType: false, //不设置内容类型  
-	        processData: false, //不处理数据
+			data:{"pageNo":pageNo,"pagesize":pagesize,"status":status},
 			success:function(msg){
 				alert(msg);
 			}

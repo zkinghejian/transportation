@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 	private UserMapper userMapper;
 	
 	@Override
-	public Map<String,Object> login(String phoneno, String password) {
+	public Map<String,Object> login(String phoneno, String password) throws Exception {
 		Map<String, Object> info = new HashMap<String,Object>();
 		String str = "success";
 		
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public String indexInfo(String username, String email, String phoneno, String problem) {
+	public String indexInfo(String username, String email, String phoneno, String problem){
 		String str = "失败";
 		if(username!=null&&!username.trim().equals("")&&phoneno!=null&&!phoneno.trim().equals("")&&problem!=null&&!problem.trim().equals("")) {
 			IndexInfo indexInfo = new IndexInfo();
@@ -56,9 +56,15 @@ public class UserServiceImpl implements UserService {
 			indexInfo.setEmail(email);
 			indexInfo.setPhoneno(phoneno);
 			indexInfo.setProblem(problem);
-			int i = userMapper.indexInfo(indexInfo);
-			if(i>0) {
-				str = "提交成功";
+			int i;
+			try {
+				i = userMapper.indexInfo(indexInfo);
+				if(i>0) {
+					str = "提交成功";
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}else {
 			str = "信息不完整";
@@ -67,7 +73,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public String checkPhoneno(String phoneno) {
+	public String checkPhoneno(String phoneno) throws Exception {
 		int i = userMapper.checkPhoneno(phoneno);
 		if(i>0) {
 			return "手机号已注册";
@@ -78,7 +84,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int register(String username, String password, String phoneno) {
+	public int register(String username, String password, String phoneno) throws Exception {
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);

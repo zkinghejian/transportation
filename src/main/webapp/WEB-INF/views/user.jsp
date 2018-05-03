@@ -22,7 +22,6 @@
     <script src="../back/js/jquery-ui/jquery.effects.slide.min.js" type="text/javascript"></script>
     <script src="../back/js/table/jquery.dataTables.min.js" type="text/javascript"></script>
     <!-- END: load jquery -->
-    <script type="text/javascript" src="js/table/table.js"></script>
     <!-- BEGIN: load jqplot -->
     <link href="../back/css/table/demo_page.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../back/css/jquery.jqplot.min.css" />
@@ -38,7 +37,6 @@
     <script type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.donutRenderer.min.js"></script>
     <script type="text/javascript" src="../back/js/jqPlot/plugins/jqplot.bubbleRenderer.min.js"></script>
     <!-- END: load jqplot -->
-    <script type="text/javascript" src="../back/js/table/table.js"></script>
     <script src="../back/js/setup.js" type="text/javascript"></script>
     <script src="../back/js/user.js" type="text/javascript"></script>
   <script type="text/javascript">
@@ -46,8 +44,9 @@
         $(document).ready(function () {
             setupLeftMenu();
 
-          			setSidebarHeight();
-
+            setSidebarHeight();
+            
+            yuyuePage(1,5,'null');
 
         });
     
@@ -217,100 +216,44 @@
                     <div class="dataTables_wrapper" id="example_wrapper">
                     	<div id="example_length" class="dataTables_length">
 							<label>每页显示 
-								<select size="1" name="example_length">
-									<option value="10" selected="selected">5</option>
-									<option value="25">15</option><option value="50">10</option>
-									<option value="100">20</option>
+								<select onchange="page('o')" id="selectpage" size="1" name="example_length">
+									<option value="5" selected="selected">5</option>
+									<option value="10">10</option>
+									<option value="15">15</option>
+									<option value="20">20</option>
 								</select> 
 							条</label>
 						</div>
-						<div class="dataTables_filter" id="example_filter">
-							<label>搜索: <input type="text" /> </label>
+						<div id="example_length" class="dataTables_length">
+							<label>预约状态 
+								<select onchange="page('o')" id="selectStatus" size="1" name="example_length">
+									<option value="null" selected="selected">全部</option>
+									<option value="0">待处理</option>
+									<option value="1">处理中</option>
+									<option value="2">已处理</option>
+									<option value="3">已取消</option>
+								</select> 
+							</label>
 						</div>
 		                <table class="data display datatable" id="example">
 							<thead>
 								<tr>
-									<th class="sorting_desc" rowspan="1" colspan="1" style="width: 197px;">Rendering engine</th>
-									<th class="sorting" rowspan="1" colspan="1" style="width: 249px;">Browser</th>
-									<th class="sorting" rowspan="1" colspan="1" style="width: 235px;">Platform(s)</th>
-									<th class="sorting" rowspan="1" colspan="1" style="width: 165px;">Engine version</th>
-									<th class="sorting" rowspan="1" colspan="1" style="width: 119px;">CSS grade</th>
+									<th class="sorting_desc" rowspan="1" colspan="1" style="width: 120px;">预约编号</th>
+									<th class="sorting" rowspan="1" colspan="1" style="width: 120px;">车型</th>
+									<th class="sorting" rowspan="1" colspan="1" style="width: 120px;">车牌</th>
+									<th class="sorting" rowspan="1" colspan="1" style="width: 450px;">车况</th>
+									<th class="sorting" rowspan="1" colspan="1" style="width: 110px;">状态</th>
+									<th class="sorting" rowspan="1" colspan="1" style="width: 130px;">预约时间</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr class="odd gradeX">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 4.0</td>
-									<td>Win 95+</td>
-									<td class="center"> 4</td>
-									<td class="center">X</td>
-								</tr>
-								<tr class="even gradeC">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 5.0</td>
-									<td>Win 95+</td>
-									<td class="center">5</td>
-									<td class="center">C</td>
-								</tr>
-								<tr class="odd gradeA">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 5.5</td>
-									<td>Win 95+</td>
-									<td class="center">5.5</td>
-									<td class="center">A</td>
-								</tr>
-								<tr class="odd gradeA">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 5.5</td>
-									<td>Win 95+</td>
-									<td class="center">5.5</td>
-									<td class="center">A</td>
-								</tr>
-								<tr class="odd gradeA">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 5.5</td>
-									<td>Win 95+</td>
-									<td class="center">5.5</td>
-									<td class="center">A</td>
-								</tr>
-								<tr class="odd gradeA">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 5.5</td>
-									<td>Win 95+</td>
-									<td class="center">5.5</td>
-									<td class="center">A</td>
-								</tr>
-								<tr class="odd gradeA">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 5.5</td>
-									<td>Win 95+</td>
-									<td class="center">5.5</td>
-									<td class="center">A</td>
-								</tr>
-								<tr class="odd gradeA">
-									<td>Trident</td>
-									<td>Internet
-										 Explorer 5.5</td>
-									<td>Win 95+</td>
-									<td class="center">5.5</td>
-									<td class="center">A</td>
-								</tr>
+							<tbody id="yycxshow">
+							
+								
 							</tbody>
 						</table>
-                    	<div class="dataTables_info" id="example_info">当前 1 页共 20 页共 100 条</div>
-                        <div class="dataTables_page" id="example_info">
-                        	<a href="javascript:void(0)" style="color: #1B548D;">上一页</a>
-                        	<a href="javascript:void(0)" style="color: #1B548D;">下一页</a>
-                        	<input type="text" size="1" name="page"  />
-                        	<a href="javascript:void(0)" style="color: #1B548D;">跳转</a>
-                        </div>
+                    	<div class="dataTables_info" id="yuyue_info1"></div>
+                        <div class="dataTables_page" id="yuyue_info2"></div>
+						
                     </div>
                 </div>
             </div>

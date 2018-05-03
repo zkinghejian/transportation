@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "H:\eclipseCode\transportation\mybatis-3-mapper.dtd">
+<mapper namespace="com.trans.mapper.BaseMapper">
+	<select id="getOrders" parameterType="string" resultType="Order">
+		
+	</select>
+</mapper>

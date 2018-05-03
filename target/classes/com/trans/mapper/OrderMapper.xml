@@ -20,5 +20,26 @@
     	 trans_order where phoneno = #{value}
     </select>
     
+    <select id="pageTest" parameterType="page" resultType="Order">
+    	select * from trans_order where 1=1
+       
+    	<if test="params.phoneno != null">
+		  <![CDATA[
+		  		and phoneno = #{params.phoneno}
+		  ]]>
+  		</if>
+  		<if test="params.status != null">
+  			<![CDATA[
+		  		and order_status = #{params.status}
+		    ]]>
+  		</if>
+  		
+    </select>
+    
+    <update id="quxiao" parameterType="string">
+    	<![CDATA[
+		  	update trans_order set order_status = 3 where order_id = #{value}
+		]]>
+    </update>
     
 </mapper>
